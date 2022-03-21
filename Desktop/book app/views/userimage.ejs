@@ -1,0 +1,20 @@
+<%-include('partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Enter your book</h1>
+<form method="POST" enctype="multipart/form-data" action="/userimage" style="text-align: center;">
+    <div class="form-group">
+        <label for="exampleInputEmail1">book image</label>  
+        <input type="file" class="form-control" name="userimage" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    
+
+<%-include('partials/footer.ejs') %>

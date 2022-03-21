@@ -1,0 +1,19 @@
+<%-include('partials/header')%>
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-4" style="margin:auto;text-align: center ;">
+    <div class="card" style="text-align: center ;width: 30rem; height: 600px;">
+      <img src="/uploads/<%= book.image%>"style="height: 300px;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.title %></h5><br>
+        <h5 class="card-title">Price: <%= book.price %> $</h5><br>
+        <h5 class="card-title"> Auther: <%= book.auther %></h5><br>
+        <p class="card-text"><%= book.description %></p><br>
+        <form action="/cart/addtocart" method="get">
+          <input type="hidden" name="bookId" value="<%= book._id %>">
+          <button type="submit">add to cart</button>
+        </form>
+      </div>  
+<%-include('partials/footer')%> 

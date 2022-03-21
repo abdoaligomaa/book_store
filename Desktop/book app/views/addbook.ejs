@@ -1,0 +1,74 @@
+<%-include('partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Enter your book</h1>
+<form method="post" enctype="multipart/form-data" action="/book/add" style="text-align: center;">
+    <div class="form-group">
+        <label for="exampleInputEmail1">book name</label>
+        <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% const nameError=validationError.find(err=>err.param==='name') %> 
+    <% if (nameError) { %>
+        <p class="alert alert-danger">
+            <%= nameError.msg %>
+        </p>
+     
+    <% } %>
+  
+    <div class="form-group">
+        <label for="exampleInputEmail1">book description</label>
+        <input type="text" class="form-control" name="description" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% const decsError=validationError.find(err=>err.param==='description') %> 
+    <% if (decsError) { %>
+        <p class="alert alert-danger">
+            <%= decsError.msg %>
+        </p>    
+     
+    <% } %>
+    <div class="form-group">
+        <label for="exampleInputEmail1">book auther</label>
+        <input type="text" class="form-control" name="auther" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% const autherError=validationError.find(err=>err.param==='auther') %> 
+    <% if (autherError) { %>
+        <p class="alert alert-danger">
+            <%= autherError.msg %>
+        </p>
+     
+    <% } %>
+    <div class="form-group">
+        <label for="exampleInputEmail1">book price</label>
+        <input type="number" class="form-control" name="price" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% const priceError=validationError.find(err=>err.param==='price') %> 
+    <% if (priceError) { %>
+        <p class="alert alert-danger">
+            <%= priceError.msg %>
+        </p>
+     
+    <% } %>
+    <div class="form-group">
+        <label for="exampleInputEmail1">book image</label>  
+        <input type="file" class="form-control" name="image" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% const imageError=validationError.find(err=>err.param==='image') %> 
+    <% if (imageError) { %>
+        <p class="alert alert-danger">
+            <%= imageError.msg %>
+        </p>
+     
+    <% } %>
+    
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    
+<%-include('partials/footer.ejs') %>

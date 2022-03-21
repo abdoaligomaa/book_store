@@ -1,0 +1,55 @@
+<%-include('partials/header.ejs') %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form method="POST" action="/signup" style="text-align: center;">
+    <div class="form-group">
+        <label for="exampleInputEmail1">User Name</label>
+        <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="emailHelp" >
+    </div>
+    <% let nameError = validationError.find(err => err.param === 'name') %>
+    <% if (nameError) { %>
+        <p class="alert alert-danger">
+            <%= nameError.msg %>
+        </p>
+    <% } %>
+    
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >    
+    </div>
+    <% let emailError = validationError.find(err => err.param === 'email') %>
+    <% if (emailError) { %>
+        <p class="alert alert-danger">
+            <%= emailError.msg %>
+        </p>
+    <% } %>
+
+    <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" >
+    </div>
+     </div>
+     <% let passwordError = validationError.find(err => err.param === 'password') %>
+     <% if (passwordError) { %>
+         <p class="alert alert-danger">
+             <%= passwordError.msg %>
+         </p>
+         <% } %>
+    <button type="submit" style="text-align: center;" class="btn btn-primary">Submit</button>
+     <% if (authError) { %>
+        <div class="alert alert-danger" role="alert">
+            <%- authError %> 
+          </div>
+    <% } %>
+</form>
+
+
+<%-include('partials/footer.ejs') %>
