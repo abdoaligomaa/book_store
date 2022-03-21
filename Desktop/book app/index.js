@@ -8,7 +8,7 @@ const cartRouter=require('./routers/cart')
 const {isAuth,isNotAuth}=require('./middlewar/auth')
 const path = require('path')
 const app = express()
-const port = 1000
+const PORT = process.env.PORT || 1000;
 const flash=require('connect-flash')
 var session = require('express-session');
 var MongoDBStore = require('connect-mongodb-session')(session);
@@ -80,4 +80,4 @@ app.get('/error', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`this server listen at port ${port}`))
+app.listen(PORT, () => console.log(`this server listen at port ${PORT}`))
