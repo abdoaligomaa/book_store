@@ -1,6 +1,7 @@
     const mongoose=require('mongoose')
     const bcrypt=require('bcrypt')
-    const url='mongodb://localhost/book-project'
+    // const url='mongodb://localhost/book-project'
+    const url='mongodb+srv://abdoAli:1072000@cluster0.mikwk.mongodb.net/book-app-atlas?retryWrites=true&w=majority'
     mongoose.connect(url).then(console.log('db is connected'))
     const schema=new mongoose.Schema({
         name:{
