@@ -14,7 +14,8 @@ var session = require('express-session');
 var MongoDBStore = require('connect-mongodb-session')(session);
 
 var store = new MongoDBStore({
-    uri: 'mongodb://localhost/book-project',
+    // uri: 'mongodb://localhost/book-project',
+    uri:'mongodb+srv://abdoAli:1072000@cluster0.mikwk.mongodb.net/book-app-atlas?retryWrites=true&w=majority',
     collection: 'mySessions',
 
     // By default, sessions expire after 2 weeks. The `expires` option lets
